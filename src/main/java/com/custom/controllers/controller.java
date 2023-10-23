@@ -25,6 +25,7 @@ import jakarta.servlet.http.HttpSession;
 @CrossOrigin("https://saurabhkumarniit.github.io")
 public class controller {
 
+	private ResponseEntity responseEntity;
 	@Autowired
 	respo respo;
 	
@@ -260,6 +261,19 @@ public class controller {
 		}catch (CustomerNotFoundException e){
 			return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+	}
+
+	@DeleteMapping("/user/delete/{email}")
+	public ResponseEntity<?> removeUser(@PathVariable String email) throws CustomerNotFoundException{
+		try{
+			responseEntity= new ResponseEntity<>(googleService.removeUser(email),HttpStatus.OK)  ;
+		}catch (CustomerNotFoundException e){
+			throw new CustomerNotFoundException();
+		}catch (Exception e){
+			responseEntity=new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
+		return responseEntity;
 	}
 
 	//	http://localhost:1001/feedback

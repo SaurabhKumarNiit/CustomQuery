@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 public class GoogleLogin {
 
     @Id
-    private String id;
     private String email;
+    private String id;
     private String name;
     private String photoUrl;
 

@@ -39,4 +39,15 @@ public class GoogleService {
         return googleRepository.findByEmail(email);
     }
 
+    public boolean removeUser(String email) throws CustomerNotFoundException {
+        boolean result=false;
+        if(googleRepository.findById(email).isEmpty()){
+            throw new  CustomerNotFoundException();
+        }else {
+            googleRepository.deleteById(email);
+            result= true;
+        }
+        return result;
+    }
+
 }
