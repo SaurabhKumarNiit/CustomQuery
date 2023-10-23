@@ -15,6 +15,7 @@ public class VideoRequest {
     private String phone;
     private String duration;
     private String videoType;
+	private String requirment;
     private String platform;
     private String frequency;
     private Double budget;
@@ -102,7 +103,14 @@ public class VideoRequest {
 		this.animationType = animationType;
 	}
 
-    // Getters and setters
+	public String getRequirment() {
+		return requirment;
+	}
+
+	public void setRequirment(String requirment) {
+		this.requirment = requirment;
+	}
+	// Getters and setters
     
     
 }

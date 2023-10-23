@@ -68,6 +68,7 @@ public class controller {
 		videoRequest.setSpecifications(op.getSpecifications());
 		videoRequest.setAnimationType(op.getAnimationType());
 		videoRequest.setGenre(op.getGenre());
+		videoRequest.setRequirment(op.getRequirment());
 
 		VideoRequest request = respoVideo.save(videoRequest);
 
