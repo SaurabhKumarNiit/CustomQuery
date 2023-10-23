@@ -21,7 +21,8 @@ import org.springframework.web.multipart.MultipartFile;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@CrossOrigin("http://localhost:4200/")
+//@CrossOrigin(origins = "*")
+@CrossOrigin("https://saurabhkumarniit.github.io")
 public class controller {
 
 	@Autowired
