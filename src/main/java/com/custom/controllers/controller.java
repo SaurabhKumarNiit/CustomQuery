@@ -49,9 +49,6 @@ public class controller {
 	@Autowired
 	FacebookRepository facebookRepository;
 	
-	
-	//request video editing http://localhost:1001/videoRequest
-	
 	@PostMapping("/videoRequest")
 	public VideoRequest submits(@RequestBody VideoRequest op) {
 
